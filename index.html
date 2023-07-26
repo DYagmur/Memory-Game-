@@ -1,0 +1,63 @@
+x<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      gap: 10px;
+    }
+
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      background-color: #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card.flipped {
+      background-color: #fff;
+    }
+
+    .card img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h2>Choose the game level:</h2>
+  <form id="levelForm">
+    <label>
+      <input type="radio" name="level" value="easy" checked> Easy
+    </label>
+    <label>
+      <input type="radio" name="level" value="medium"> Medium
+    </label>
+    <label>
+      <input type="radio" name="level" value="hard"> Hard
+    </label>
+    <input type="submit" value="Start Game">
+  </form>
+
+  <div class="game-container" id="gameContainer">
+    <!-- Memory game cards will be added here dynamically using JavaScript -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
