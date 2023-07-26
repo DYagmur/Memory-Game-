@@ -1,143 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Memory Game</title>
-</head>
-<body>
-    <nav class="navbar">
-        <a href="#"><p>MG</p></a>
-        <ul class="navlist">
-            <li class="navitem" id="how">?</li>
-            <li class="navitem" id="reload">&#8634;</li>
-            <li class="navitem" id="scoreboard">&#9638;</li>
-        </ul>
-    </nav>
-    <div id="popup">
-        <h2>How to play</h2>
-        <ol>
-            <li>The game starts with a deck of face-down cards on the board.</li>
-            <li>Click on any card to reveal its face.</li>
-            <li>Click on another card to find a matching pair.</li>
-            <li>If the cards match, they remain face-up on the board.</li>
-            <li>If the cards do not match, they will be turned back face-down.</li>
-            <li>Continue flipping cards and finding pairs until all cards are matched.</li>
-            <li>The game keeps track of your moves and time taken to complete the game.</li>
-        </ol>
-    </div>
-    <div id="score">
-        <h2>Leaderboard</h2>
-        <p id="best">35</p>
-        <ol>
-            <li id="score2">35</li>
-            <li id="score3">35</li>
-            <li id="score4">35</li>
-        </ol>
-    </div>
-    <main class="container" id="blur">
-        <section class="banner">
-            <h1>Memory Game</h1>
-            <a href="#level-container">Start <span class="play">►</span></a>
-        </section>
-        
-        <section class="level-container" id="level-container">
-            <h1 class="level-text">Choose difficulty</h1>
-            <div class="level" id="level">
-                <div class="diff easy" id="easy">Easy</div>
-                <div class="diff medium" id="medium">Medium</div>
-                <div class="diff hard" id="hard">Hard</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/style.css" />
+        <title>Memory Game</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#"><p>MG</p></a>
+            <ul class="navlist">
+                <li class="navitem" id="how">?</li>
+                <li class="navitem" id="reload">&#8634;</li>
+                <li class="navitem" id="scoreboard">&#9638;</li>
+            </ul>
+        </nav>
+        <div id="popup">
+            <h2>How to play</h2>
+            <ol>
+                <li>
+                    The game starts with a deck of face-down cards on the board.
+                </li>
+                <li>Click on any card to reveal its face.</li>
+                <li>Click on another card to find a matching pair.</li>
+                <li>If the cards match, they remain face-up on the board.</li>
+                <li>
+                    If the cards do not match, they will be turned back
+                    face-down.
+                </li>
+                <li>
+                    Continue flipping cards and finding pairs until all cards
+                    are matched.
+                </li>
+                <li>
+                    The game keeps track of your moves and time taken to
+                    complete the game.
+                </li>
+            </ol>
+        </div>
+        <div id="score">
+            <h2>Leaderboard</h2>
+            <p id="best">35</p>
+            <ol>
+                <li id="score2">35</li>
+                <li id="score3">35</li>
+                <li id="score4">35</li>
+            </ol>
+        </div>
+        <main class="container" id="blur">
+            <section class="banner">
+                <h1>Memory Game</h1>
+                <a href="#game-board">Start <span class="play">►</span></a>
+            </section>
+            <div id="game-board">
+                <section class="level-container">
+                    <h1 class="level-text">Choose difficulty</h1>
+                    <div class="level" id="level">
+                        <div class="diff easy" id="4" onclick="gameLevel(this)">
+                            Easy
+                        </div>
+                        <div
+                            class="diff medium"
+                            id="6"
+                            onclick="gameLevel(this)"
+                        >
+                            Medium
+                        </div>
+                        <div
+                            class="diff hard"
+                            id="10"
+                            onclick="gameLevel(this)"
+                        >
+                            Hard
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
-        <!-- <section class="game-container">
-            <div class="timer" id="timer"><p>180</p></div>
-        <section class="game" id="game">
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/meteor.png" alt="Meteor">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/meteor.png" alt="Meteor">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/earth.png" alt="Earth">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/earth.png" alt="Earth">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/planet.png" alt="Planet">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/planet.png" alt="Planet">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/robot.png" alt="Robot">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/robot.png" alt="Robot">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/asteroid.png" alt="Asteroid">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/asteroid.png" alt="Asteroid">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/asteroid1.png" alt="Fall">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/asteroid1.png" alt="Fall">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/astronaut.png" alt="Waving">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/astronaut.png" alt="Waving">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/astronaut1.png" alt="Astronaut">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/astronaut1.png" alt="Astronaut">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/rocket.png" alt="Rocket">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/rocket.png" alt="Rocket">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/galaxy.png" alt="Galaxy">
-            </div>
-            <div class="card">
-                <img class="back" src="img/back.png" alt="Back Face">
-                <img class="front" src="img/galaxy.png" alt="Galaxy">
-            </div>
-        </section> -->
-    </section>
-    </main>
-    <footer></footer>
-    <script src="js/flip.js"></script>
-    <script src="js/popup.js"></script>
-</body>
+
+            <!--div class="timer" id="timer">180</-div>
+            <section-- class="game" id="game-board">
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/meteor.png" alt="Meteor" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/meteor.png" alt="Meteor" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/earth.png" alt="Earth" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/earth.png" alt="Earth" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/planet.png" alt="Planet" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/planet.png" alt="Planet" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/robot.png" alt="Robot" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/robot.png" alt="Robot" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/asteroid.png" alt="Asteroid" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/asteroid.png" alt="Asteroid" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/asteroid1.png" alt="Fall" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/asteroid1.png" alt="Fall" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/astronaut.png" alt="Waving" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/astronaut.png" alt="Waving" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img
+                        class="front"
+                        src="img/astronaut1.png"
+                        alt="Astronaut"
+                    />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img
+                        class="front"
+                        src="img/astronaut1.png"
+                        alt="Astronaut"
+                    />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/rocket.png" alt="Rocket" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/rocket.png" alt="Rocket" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/galaxy.png" alt="Galaxy" />
+                </div>
+                <div class="card">
+                    <img class="back" src="img/back.png" alt="Back Face" />
+                    <img class="front" src="img/galaxy.png" alt="Galaxy" />
+                </div>
+            </section-->
+        </main>
+        <script src="js/flip.js"></script>
+        <script src="js/popup.js"></script>
+        <script src="js/bridge.js"></script>
+    </body>
 </html>
