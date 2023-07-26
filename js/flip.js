@@ -1,7 +1,4 @@
-const cards = document.querySelectorAll('.card');
-
 function flipCard() {
-    this.classList.toggle('flip');
+    this.classList.toggle("flip");
+    isPair(this.getAttribute("card"));
 }
-
-cards.forEach(card => card.addEventListener('click', flipCard));
