@@ -66,7 +66,7 @@ function isPair(att) {
     }
 }
 
-// Function to check if the game is completed
+// Function to check if the game is completed.
 function checkGameCompletion() {
     let matchedCards = document.querySelectorAll(".card");
     let completed = true;
