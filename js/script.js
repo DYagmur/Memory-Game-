@@ -9,7 +9,7 @@ const items = [
     { id: "galaxy", url: "./img/galaxy.png" },
     { id: "planet", url: "./img/planet.png" },
     { id: "rocket", url: "./img/rocket.png" },
-    { id: "ufo", url: "./img/ufo.png" }
+    { id: "ufo", url: "./img/ufo.png" },
 ];
 
 function createPictures(number) {
@@ -33,8 +33,6 @@ function shuffleArray(array) {
 let turn = 1;
 let currentCard = "default";
 function isPair(att) {
-    console.log(att);
-    console.log(currentCard);
     let open = document.querySelectorAll(`[card=${att}]`);
     let current = document.querySelectorAll(`[card=${currentCard}]`);
     if (turn == 2) {
@@ -42,7 +40,6 @@ function isPair(att) {
         if (currentCard === att) {
             currentCard = "default";
         } else {
-            console.log("diferentes");
             setTimeout(() => {
                 for (let i = 0; i < 2; i++) {
                     open[i].classList.remove("flip");
@@ -54,33 +51,21 @@ function isPair(att) {
     } else {
         turn = 2;
         currentCard = att;
-        console.log(att);
+    }
+    if (checkGameCompletion()) {
+        stop();
+        setScore();
     }
 }
 
+function checkGameCompletion() {
+    let matchedCards = document.querySelectorAll(".card");
+    let completed = true;
 
-/* 
-function checkMatch() {
-    let card1 = openCards[0];
-    let card2 = openCards[1];
-    let cards = document.querySelectorAll(`[card="${card1}"], [card="${card2}"]`);
-
-    if (card1 === card2) {
-        openCards = [];
-        checkGameCompletion();
-    } else {
-        setTimeout(() => {
-            cards.forEach(card => card.classList.remove("flip"));
-            openCards = [];
-        }, 500);
+    for (let i = 0; i < matchedCards.length; i++) {
+        if (!matchedCards[i].classList.contains("flip")) {
+            completed = false;
+        }
     }
-} */
-
-/* function checkGameCompletion() {
-    let matchedCards = document.querySelectorAll(".flivp");
-    if (matchedCards.length === items.length * 2) {
-        console.log("Game completed!");
-        return true;
-    }
-    return false;
-} */
+    return completed;
+}
