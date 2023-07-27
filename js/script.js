@@ -14,9 +14,11 @@ const items = [
 
 function createPictures(number) {
     let cards = [];
-    for (let i = 0; i < number; i++) {
+    let i = 0;
+    while (i < number) {
         cards.push(items[i]);
         cards.push(items[i]);
+        i++;
     }
     cards = shuffleArray(cards);
     createCards(cards);

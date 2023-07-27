@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/style.css" />
-        <link rel="icon" href="img/alien.png">
+        <link rel="icon" href="img/alien.png" />
         <title>Memory Game</title>
     </head>
     <body>
@@ -51,34 +51,20 @@
         </div>
         <main class="container" id="blur">
             <section class="banner">
-                <h1>Memory Game</h1>
+                <h1 id="title"></h1>
                 <a href="#game-board">Start <span class="play">►</span></a>
             </section>
             <div id="game-board">
                 <section class="level-container">
                     <h1 class="level-text">Choose difficulty</h1>
                     <div class="level" id="level">
-                        <div class="diff easy" id="4" onclick="gameLevel(this)">
-                            Easy
-                        </div>
-                        <div
-                            class="diff medium"
-                            id="6"
-                            onclick="gameLevel(this)"
-                        >
-                            Medium
-                        </div>
-                        <div
-                            class="diff hard"
-                            id="10"
-                            onclick="gameLevel(this)"
-                        >
-                            Hard
-                        </div>
+                        <div class="diff easy" id="3">Easy</div>
+                        <div class="diff medium" id="6">Medium</div>
+                        <div class="diff hard" id="9">Hard</div>
                     </div>
                 </section>
             </div>
-<!-- 
+            <!-- 
             <div class="timer" id="timer">180</div>
             <section-- class="game" id="game-board">
                 <div class="card">
