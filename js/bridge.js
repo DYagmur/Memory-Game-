@@ -1,15 +1,18 @@
+// Delete all elements on the container
 function removeChilds() {
     const container = document.getElementById("game-board");
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
     }
 }
-
+// Gettin the level from the buttons on screen
 function gameLevel(event) {
     const level = event.target.id;
     removeChilds();
     createPictures(level);
 }
+
+// Creating cards dynamically and put them on screen
 function createCards(arr) {
     const timer = document.createElement("div");
     timer.id = "timer";
@@ -39,6 +42,7 @@ function createCards(arr) {
     start();
 }
 
+// Creating level cards and put them on screen
 function reload() {
     removeChilds();
     const boardGame = document.getElementById("game-board");
@@ -78,6 +82,7 @@ function reload() {
     stop();
 }
 
+// Functions for timer on screen
 let timer;
 function start() {
     timer = setInterval(() => {
@@ -89,6 +94,8 @@ function start() {
 function stop() {
     clearInterval(timer);
 }
+
+// Setting score on Local Storage
 function setScore() {
     const currentTime = document.getElementById("timer").innerHTML;
     let arrayScore = getScore();
@@ -100,6 +107,8 @@ function setScore() {
         localStorage.setItem("bestScore", currentTime);
     }
 }
+
+// Getting Scores best and historical
 function getScore() {
     if (localStorage.getItem("score")) {
         const arrayScore = JSON.parse(localStorage.getItem("score"));
@@ -112,6 +121,7 @@ function getBestScore() {
     }
 }
 
+// Getting the current date
 function today() {
     const today = new Date();
     return (
@@ -122,12 +132,15 @@ function today() {
         today.getFullYear()
     );
 }
+
+// String management
 function setTitle() {
     let title = "Memory....Game";
     title = title.split(".").join(" ");
     document.getElementById("title").innerHTML = title;
 }
 
+// Adding function when document is complety loaded
 document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("score", "[0,0,0]");
     localStorage.setItem("bestScore", "100");
