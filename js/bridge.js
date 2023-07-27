@@ -136,4 +136,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("4").addEventListener("click", gameLevel);
     document.getElementById("6").addEventListener("click", gameLevel);
     document.getElementById("10").addEventListener("click", gameLevel);
+    document.getElementById('todaydate').innerHTML = today();
 });

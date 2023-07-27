@@ -63,6 +63,8 @@ a {
     margin-left: 5rem;
     transition: 0.3s;
     position: relative;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
 }
 
 /* POPUP */
@@ -147,7 +149,6 @@ a {
 /* HEROBANNER */
 .banner {
     height: 100vh;
-    background-color: #081448;
     font-size: 5rem;
     text-align: center;
     position: relative;
@@ -191,9 +192,13 @@ a {
 }
 
 /* GAME */
+#game-board {
+    height: 100vh;
+}
+
 .game {
     /*height: 100vh;*/
-    max-width: 600px;
+    max-width: 70%;
     margin: auto;
     text-align: center;
     perspective: 1000px;
@@ -205,7 +210,7 @@ a {
 }
 
 .card {
-    max-width: calc(25% - 15px);
+    max-width: calc(16% - 15px);
     position: relative;
     background-color: red;
     transform: scale(1);
