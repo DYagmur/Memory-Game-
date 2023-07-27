@@ -57,3 +57,30 @@ function isPair(att) {
         console.log(att);
     }
 }
+
+
+/* 
+function checkMatch() {
+    let card1 = openCards[0];
+    let card2 = openCards[1];
+    let cards = document.querySelectorAll(`[card="${card1}"], [card="${card2}"]`);
+
+    if (card1 === card2) {
+        openCards = [];
+        checkGameCompletion();
+    } else {
+        setTimeout(() => {
+            cards.forEach(card => card.classList.remove("flip"));
+            openCards = [];
+        }, 500);
+    }
+} */
+
+/* function checkGameCompletion() {
+    let matchedCards = document.querySelectorAll(".flivp");
+    if (matchedCards.length === items.length * 2) {
+        console.log("Game completed!");
+        return true;
+    }
+    return false;
+} */
