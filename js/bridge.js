@@ -116,6 +116,19 @@ function getBestScore() {
         return localStorage.getItem("bestScore");
     }
 }
+
+function today() {
+    let today = new Date();
+    console.log(today);
+    return (
+        today.getDate() +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getFullYear()
+    );
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("score", "[0,0,0]");
     localStorage.setItem("bestScore", "100");
